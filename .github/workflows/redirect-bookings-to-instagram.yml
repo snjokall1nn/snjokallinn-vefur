@@ -1,0 +1,38 @@
+name: Redirect booking CTAs to Instagram
+
+on:
+  push:
+    paths:
+      - '.github/workflows/redirect-bookings-to-instagram.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replace Google Form booking links
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('index.html')
+          text = p.read_text()
+          old = 'https://forms.gle/ZeZjBG6SMwHak4zN7'
+          new = 'https://www.instagram.com/snjokallinn/'
+          text = text.replace(old, new)
+          p.write_text(text)
+          PY
+      - name: Commit change
+        run: |
+          if git diff --quiet; then
+            echo 'No booking links needed changing.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html
+          git commit -m 'Send booking CTAs to Instagram'
+          git push
