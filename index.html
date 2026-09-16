@@ -3,180 +3,796 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#0e0e0f">
-  <meta name="description" content="Snjókallinn — portrait ljósmyndun í Reykjavík. Myndataka þar sem þú þarft ekki að kunna að pósa.">
-  <title>Snjókallinn — portrait ljósmyndun í Reykjavík</title>
+  <meta name="theme-color" content="#f6f0e5">
+  <meta name="description" content="Snjókallinn verðleiðari — finndu rétta portrettsjútið, taktu myndakviss og reiknaðu verðið.">
+  <title>Snjókallinn — pakkar, myndakviss & verðreiknivél</title>
   <style>
     :root{
-      --ink:#111113;--paper:#f6f0e5;--white:#fff;--yellow:#ffd94d;--pink:#ff7eae;--lilac:#9a7cff;--muted:#6b6864;--line:#171717;--radius:24px;--shadow:6px 6px 0 #111113
+      --ink:#111113;
+      --paper:#f6f0e5;
+      --paper-2:#fffaf2;
+      --white:#fff;
+      --yellow:#ffd94d;
+      --pink:#ff7eae;
+      --lilac:#9a7cff;
+      --green:#b9e6b0;
+      --muted:#6b6864;
+      --line:#171717;
+      --radius:24px;
+      --shadow:6px 6px 0 #111113;
+      --shadow-sm:4px 4px 0 #111113;
+      --max:1140px;
     }
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-x:hidden}img{display:block;width:100%;height:100%;object-fit:cover}a{color:inherit}.page{width:min(1180px,100%);margin:auto;padding:0 18px 70px}.announce{margin:0 -18px;background:var(--yellow);border-bottom:2px solid var(--ink);padding:10px 18px;text-align:center;font-weight:900;font-size:13px;letter-spacing:.02em}.nav{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(16px)}.brand{font-weight:1000;font-size:20px;text-decoration:none;letter-spacing:-.04em}.navlinks{display:flex;align-items:center;gap:16px;font-weight:800;font-size:14px}.navlinks a{text-decoration:none}.book{display:inline-flex;align-items:center;justify-content:center;min-height:44px;border:2px solid var(--ink);background:var(--ink);color:#fff;padding:10px 14px;border-radius:999px;text-decoration:none;font-weight:950}.hero{margin:8px 0 34px;display:grid;grid-template-columns:1.05fr .95fr;min-height:650px;background:var(--ink);color:#fff;border-radius:34px;overflow:hidden;border:3px solid var(--ink)}.hero-copy{padding:clamp(26px,5vw,62px);display:flex;flex-direction:column;justify-content:center}.eyebrow{font-size:12px;font-weight:950;letter-spacing:.18em;text-transform:uppercase;color:var(--yellow)}h1,h2,h3,p{margin-top:0}.hero h1{font-size:clamp(48px,7.6vw,92px);line-height:.86;letter-spacing:-.068em;margin:14px 0 24px;max-width:760px}.hero p{font-size:clamp(17px,2vw,21px);line-height:1.48;max-width:650px;color:#e6e3df}.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 17px;border-radius:14px;border:2px solid var(--ink);font-weight:950;text-decoration:none;cursor:pointer;font:inherit}.btn-yellow{background:var(--yellow);color:var(--ink)}.btn-white{background:#fff;color:var(--ink)}.hero-photo{position:relative;min-height:420px;background:#333}.hero-photo img{object-position:center 35%}.hud{position:absolute;inset:16px;pointer-events:none;border:1px solid #ffffff66;border-radius:20px}.hud:before,.hud:after{content:"";position:absolute;width:42px;height:42px}.hud:before{left:14px;top:14px;border-left:2px solid #fff;border-top:2px solid #fff}.hud:after{right:14px;bottom:14px;border-right:2px solid #fff;border-bottom:2px solid #fff}.hud-label{position:absolute;right:18px;top:14px;background:#111b;color:#fff;padding:6px 8px;border-radius:8px;font:700 11px ui-monospace,monospace}.section{margin:54px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:18px}.section h2{font-size:clamp(34px,5.5vw,64px);line-height:.92;letter-spacing:-.055em;margin:0}.section-lede{max-width:520px;color:var(--muted);line-height:1.55;margin:0}.gallery{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:12px}.shot{position:relative;border-radius:22px;overflow:hidden;background:#ddd;border:2px solid var(--ink)}.shot:nth-child(1){aspect-ratio:4/5}.shot:nth-child(2),.shot:nth-child(3){aspect-ratio:4/5}.shot img{transition:transform .35s ease}.shot:hover img{transform:scale(1.018)}.shot:nth-child(1) img{object-position:center 38%}.shot:nth-child(2) img{object-position:center 42%}.shot:nth-child(3) img{object-position:center 40%}.gallery-wide{margin-top:12px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.gallery-wide .shot{aspect-ratio:1/1.18}.tag{position:absolute;left:10px;bottom:10px;padding:7px 9px;border-radius:999px;background:#111d;color:#fff;font-size:11px;font-weight:900;backdrop-filter:blur(8px)}.proof{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.proof-card{background:#fff;border:2px solid var(--ink);border-radius:22px;padding:20px;box-shadow:var(--shadow)}.icon{width:42px;height:42px;border:2px solid var(--ink);border-radius:12px;display:grid;place-items:center;margin-bottom:18px;background:var(--yellow)}.icon svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2}.proof-card h3{font-size:23px;margin-bottom:8px;letter-spacing:-.03em}.proof-card p{color:#514f4b;line-height:1.52;margin:0}.packages{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.pkg{position:relative;background:#fff;border:3px solid var(--ink);border-radius:24px;padding:22px;box-shadow:var(--shadow);display:flex;flex-direction:column;min-height:390px}.pkg.featured{background:var(--yellow)}.badge{display:inline-flex;align-self:flex-start;background:var(--ink);color:#fff;padding:6px 9px;border-radius:999px;font-size:11px;font-weight:950;letter-spacing:.08em}.pkg h3{font-size:30px;letter-spacing:-.04em;margin:18px 0 4px}.price{font-size:clamp(34px,4vw,48px);font-weight:1000;letter-spacing:-.055em;margin-bottom:18px}.pkg ul{list-style:none;padding:0;margin:0;display:grid;gap:10px;line-height:1.4}.pkg li:before{content:"✓";font-weight:1000;margin-right:8px}.pkg .mini{margin-top:auto;padding-top:18px;color:#5c5852;font-size:13px}.guide{background:var(--pink);border:3px solid var(--ink);border-radius:28px;padding:clamp(20px,4vw,34px);box-shadow:var(--shadow)}.guide-top{display:grid;grid-template-columns:1fr .9fr;gap:24px;align-items:start}.guide h2{font-size:clamp(38px,6vw,66px)}.questions{display:grid;gap:12px}.q{background:#fff;border:2px solid var(--ink);border-radius:18px;padding:16px}.q>b{display:block;margin-bottom:10px}.option-grid{display:grid;gap:8px}.choice{display:flex;align-items:center;gap:9px;padding:10px 11px;border:1.5px solid #111;border-radius:12px;background:#faf8f3;font-weight:750}.choice input{accent-color:#111}.q select{width:100%;min-height:44px;border:1.5px solid #111;border-radius:10px;background:#fff;padding:8px;font:inherit}.result{position:sticky;top:78px;background:var(--ink);color:#fff;border-radius:22px;padding:22px;border:3px solid var(--ink)}.result small{color:#bbb;font-weight:900;letter-spacing:.1em}.result h3{font-size:36px;letter-spacing:-.04em;margin:8px 0}.result-price{font-size:42px;font-weight:1000;color:var(--yellow);letter-spacing:-.05em}.result p{color:#ccc;line-height:1.45}.process{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.step{background:#fff;border:2px solid var(--ink);border-radius:18px;padding:17px;min-height:150px}.step-num{font-size:12px;font-weight:1000;background:var(--lilac);color:#fff;border-radius:999px;padding:6px 9px;display:inline-block;margin-bottom:18px}.step h3{font-size:18px;margin-bottom:6px}.step p{font-size:14px;color:#5b5854;line-height:1.45;margin:0}.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:18px;align-items:stretch}.about-photo{border-radius:28px;overflow:hidden;border:3px solid var(--ink);min-height:520px}.about-photo img{object-position:center 36%}.about-copy{background:var(--ink);color:#fff;border-radius:28px;padding:clamp(24px,4vw,42px)}.about-copy h2{margin-bottom:18px}.about-copy p{font-size:17px;line-height:1.6;color:#ddd}.quote{font-size:clamp(24px,3vw,34px)!important;line-height:1.15!important;color:#fff!important;font-weight:950;letter-spacing:-.03em}.company{display:grid;grid-template-columns:1fr .8fr;gap:16px;background:var(--lilac);color:#fff;border:3px solid var(--ink);border-radius:28px;padding:clamp(22px,4vw,38px);box-shadow:var(--shadow)}.company p{line-height:1.55;color:#f2edff}.company-side{background:#fff;color:var(--ink);border-radius:20px;padding:20px}.company-side ul{padding-left:20px;line-height:1.7}.faq{display:grid;gap:10px}.faq details{background:#fff;border:2px solid var(--ink);border-radius:16px;padding:15px 17px}.faq summary{font-weight:950;cursor:pointer}.faq p{color:#55514c;line-height:1.55;margin:12px 0 2px}.final{background:var(--yellow);border:3px solid var(--ink);border-radius:30px;padding:clamp(28px,5vw,55px);text-align:center;box-shadow:var(--shadow)}.final h2{font-size:clamp(44px,7vw,80px);max-width:850px;margin:0 auto 18px}.final p{font-size:18px;max-width:650px;margin:0 auto 24px;line-height:1.5}.foot{display:flex;justify-content:space-between;gap:20px;padding:36px 2px 0;color:#555;font-size:14px}.foot a{font-weight:800}.only-mobile{display:none}
-    @media(max-width:900px){.hero{grid-template-columns:1fr;min-height:0}.hero-copy{order:2}.hero-photo{order:1;aspect-ratio:4/3;min-height:0}.gallery{grid-template-columns:1fr 1fr}.gallery .shot:first-child{grid-column:1/-1;aspect-ratio:16/10}.gallery-wide{grid-template-columns:1fr 1fr}.proof,.packages{grid-template-columns:1fr}.pkg{min-height:0}.guide-top{grid-template-columns:1fr}.result{position:static}.process{grid-template-columns:1fr 1fr}.about,.company{grid-template-columns:1fr}.about-photo{aspect-ratio:4/5;min-height:0}.navlinks a:not(.book){display:none}.only-mobile{display:inline-flex}}
-    @media(max-width:560px){.page{padding:0 14px 55px}.announce{margin:0 -14px;padding-inline:14px}.nav{padding:10px 0}.brand{font-size:18px}.hero{margin-top:4px;border-radius:24px}.hero-copy{padding:24px 20px 28px}.hero h1{font-size:clamp(44px,14vw,66px)}.hero-photo{aspect-ratio:1/1.02}.hero-actions{display:grid}.btn{width:100%}.section{margin:42px 0}.section-head{display:block}.section-lede{margin-top:12px}.gallery{grid-template-columns:1fr 1fr;gap:8px}.gallery .shot:first-child{aspect-ratio:4/5}.gallery-wide{gap:8px}.gallery-wide .shot{aspect-ratio:1/1.2}.proof-card{box-shadow:4px 4px 0 #111}.process{grid-template-columns:1fr}.step{min-height:0}.guide{box-shadow:4px 4px 0 #111}.about-copy{padding:24px 20px}.company{box-shadow:4px 4px 0 #111}.foot{display:block}.foot div+div{margin-top:8px}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.shot img{transition:none}}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 8% 7%, rgba(255,126,174,.12), transparent 22rem),
+        radial-gradient(circle at 94% 28%, rgba(154,124,255,.12), transparent 24rem),
+        var(--paper);
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;
+    }
+    img{display:block;width:100%;height:100%;object-fit:cover}
+    a{color:inherit}
+    button,input,select{font:inherit}
+    button{color:inherit}
+    .wrap{width:min(var(--max),calc(100% - 32px));margin:auto}
+    .nav{
+      position:sticky;top:0;z-index:60;
+      background:color-mix(in srgb,var(--paper) 92%,transparent);
+      backdrop-filter:blur(18px);
+      border-bottom:2px solid transparent;
+    }
+    .nav-inner{
+      min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px;
+    }
+    .brand{
+      font-weight:1000;font-size:20px;letter-spacing:-.055em;text-decoration:none;white-space:nowrap;
+    }
+    .brand-dot{color:var(--pink)}
+    .navlinks{display:flex;align-items:center;gap:17px;font-size:14px;font-weight:850}
+    .navlinks a{text-decoration:none}
+    .navlinks a:hover{text-decoration:underline;text-underline-offset:4px}
+    .nav-cta{
+      border:2px solid var(--ink);background:var(--ink);color:#fff;border-radius:999px;padding:10px 15px;
+    }
+    .hero{
+      padding:42px 0 26px;
+      display:grid;grid-template-columns:minmax(0,1.05fr) minmax(340px,.95fr);gap:22px;align-items:stretch;
+    }
+    .hero-copy{
+      min-height:610px;background:var(--yellow);border:3px solid var(--ink);border-radius:34px;
+      box-shadow:var(--shadow);padding:clamp(26px,5vw,58px);display:flex;flex-direction:column;justify-content:center;
+    }
+    .kicker{
+      display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:950;letter-spacing:.17em;text-transform:uppercase;
+    }
+    .kicker:before{content:"";width:9px;height:9px;background:var(--pink);border:2px solid var(--ink);border-radius:999px}
+    h1,h2,h3,p{margin-top:0}
+    h1{
+      margin:16px 0 22px;font-size:clamp(54px,7.1vw,98px);line-height:.87;letter-spacing:-.074em;max-width:720px;
+    }
+    .hero p{font-size:clamp(18px,2vw,21px);line-height:1.5;max-width:650px;margin-bottom:26px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:10px}
+    .btn{
+      appearance:none;border:2px solid var(--ink);border-radius:14px;min-height:50px;padding:12px 17px;
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:950;text-decoration:none;
+      cursor:pointer;transition:transform .12s ease,box-shadow .12s ease;background:#fff;
+    }
+    .btn:hover{transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--ink)}
+    .btn-dark{background:var(--ink);color:#fff}
+    .btn-pink{background:var(--pink)}
+    .btn-yellow{background:var(--yellow)}
+    .hero-media{
+      min-height:610px;border:3px solid var(--ink);border-radius:34px;overflow:hidden;position:relative;background:#d8d0c4;
+    }
+    .hero-media img{object-position:center 38%}
+    .viewfinder{position:absolute;inset:18px;border:1px solid rgba(255,255,255,.65);border-radius:22px;pointer-events:none}
+    .viewfinder:before,.viewfinder:after{content:"";position:absolute;width:42px;height:42px}
+    .viewfinder:before{left:14px;top:14px;border-left:2px solid #fff;border-top:2px solid #fff}
+    .viewfinder:after{right:14px;bottom:14px;border-right:2px solid #fff;border-bottom:2px solid #fff}
+    .rec{
+      position:absolute;right:18px;top:14px;background:rgba(17,17,19,.72);color:#fff;border-radius:999px;
+      padding:7px 10px;font:800 11px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em
+    }
+    .rec:before{content:"●";color:#ff476f;margin-right:6px}
+
+    .section{padding:62px 0}
+    .section-head{
+      display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,480px);gap:24px;align-items:end;margin-bottom:24px;
+    }
+    .section h2{
+      margin:0;font-size:clamp(42px,6.2vw,74px);line-height:.91;letter-spacing:-.065em;
+    }
+    .lede{color:var(--muted);line-height:1.6;margin:0;font-size:16px}
+    .packages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .package{
+      background:#fff;border:3px solid var(--ink);border-radius:26px;overflow:hidden;box-shadow:var(--shadow);
+      display:flex;flex-direction:column;
+    }
+    .package.featured{background:var(--yellow);transform:translateY(-9px)}
+    .package-media{aspect-ratio:4/3;border-bottom:3px solid var(--ink);overflow:hidden;background:#ddd}
+    .package-media img{transition:transform .3s ease}
+    .package:hover .package-media img{transform:scale(1.025)}
+    .package:nth-child(1) .package-media img{object-position:center 38%}
+    .package:nth-child(2) .package-media img{object-position:center 40%}
+    .package:nth-child(3) .package-media img{object-position:center 35%}
+    .package-body{padding:20px 20px 22px;display:flex;flex-direction:column;flex:1}
+    .pill{
+      display:inline-flex;align-self:flex-start;background:var(--ink);color:#fff;border-radius:999px;
+      padding:6px 9px;font-size:10px;font-weight:950;letter-spacing:.1em;text-transform:uppercase
+    }
+    .package h3{font-size:30px;letter-spacing:-.045em;margin:16px 0 5px}
+    .price{font-size:clamp(36px,4vw,48px);font-weight:1000;letter-spacing:-.055em;margin-bottom:16px}
+    .package ul{list-style:none;padding:0;margin:0;display:grid;gap:9px;line-height:1.4}
+    .package li:before{content:"✓";font-weight:1000;margin-right:8px}
+    .package-note{margin-top:auto;padding-top:18px;color:#5a5753;line-height:1.5;font-size:13px}
+
+    .extras{
+      margin-top:20px;display:grid;grid-template-columns:1.15fr repeat(3,.6fr);gap:10px;align-items:stretch
+    }
+    .extra-intro,.extra{
+      border:2px solid var(--ink);border-radius:18px;background:#fff;padding:18px;display:flex;flex-direction:column;justify-content:center
+    }
+    .extra-intro{background:var(--pink)}
+    .extra-intro h3{font-size:22px;margin:0 0 5px;letter-spacing:-.03em}
+    .extra-intro p{margin:0;line-height:1.45;font-size:14px}
+    .extra b{font-size:25px;letter-spacing:-.04em}
+    .extra span{font-size:13px;color:var(--muted);margin-top:3px}
+
+    .quiz-shell{
+      background:var(--pink);border:3px solid var(--ink);border-radius:32px;box-shadow:var(--shadow);
+      padding:clamp(20px,4vw,36px);
+    }
+    .quiz-top{
+      display:flex;justify-content:space-between;gap:18px;align-items:flex-start;margin-bottom:22px
+    }
+    .quiz-top .lede{color:#3d3137;max-width:510px}
+    .quiz-progress{
+      min-width:120px;background:var(--ink);color:#fff;border-radius:999px;padding:8px 12px;text-align:center;
+      font-weight:900;font-size:12px;letter-spacing:.06em
+    }
+    .quiz-stage{
+      background:var(--paper-2);border:3px solid var(--ink);border-radius:24px;padding:clamp(17px,3vw,28px)
+    }
+    .quiz-stage h3{font-size:clamp(28px,4vw,42px);letter-spacing:-.045em;margin:0 0 18px}
+    .answers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+    .answer{
+      position:relative;display:flex;align-items:flex-start;gap:11px;border:2px solid var(--ink);border-radius:16px;
+      padding:14px;background:#fff;font-weight:800;line-height:1.3;cursor:pointer;text-align:left;min-height:64px
+    }
+    .answer:hover{background:#fff6cf}
+    .answer.selected{background:var(--yellow);box-shadow:3px 3px 0 var(--ink);transform:translate(-1px,-1px)}
+    .answer input{position:absolute;opacity:0;pointer-events:none}
+    .answer .dot{
+      width:18px;height:18px;flex:0 0 18px;border:2px solid var(--ink);border-radius:50%;margin-top:1px;background:#fff
+    }
+    .answer.selected .dot{background:var(--ink);box-shadow:inset 0 0 0 4px var(--yellow)}
+    .visual-answers{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .visual-answer{
+      padding:0;display:block;overflow:hidden;min-height:0;background:#fff
+    }
+    .visual-answer .quiz-img{aspect-ratio:3/4;border-bottom:2px solid var(--ink);overflow:hidden}
+    .visual-answer img{object-position:center 40%}
+    .visual-answer .visual-label{display:flex;gap:9px;align-items:flex-start;padding:12px}
+    .visual-answer .dot{margin-top:0}
+    .quiz-actions{display:flex;justify-content:space-between;gap:10px;margin-top:18px}
+    .quiz-actions .right{display:flex;gap:10px}
+    .quiz-result{
+      display:none;grid-template-columns:1fr .72fr;gap:18px;align-items:stretch
+    }
+    .quiz-result.show{display:grid}
+    .result-copy{
+      background:var(--ink);color:#fff;border-radius:22px;padding:clamp(22px,4vw,34px)
+    }
+    .result-copy .kicker{color:var(--yellow)}
+    .result-copy h3{font-size:clamp(38px,5vw,62px);line-height:.92;letter-spacing:-.06em;margin:14px 0}
+    .result-copy p{color:#ddd;line-height:1.6}
+    .result-pack{
+      margin:20px 0 0;border:2px solid #fff;border-radius:16px;padding:16px
+    }
+    .result-pack small{display:block;color:#bbb;font-weight:900;letter-spacing:.08em}
+    .result-pack strong{display:block;font-size:25px;margin-top:5px}
+    .result-photo{border:3px solid var(--ink);border-radius:22px;overflow:hidden;min-height:420px;background:#ddd}
+    .result-photo img{object-position:center 40%}
+    .result-buttons{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+
+    .sources{
+      margin-top:14px;padding:16px 18px;border:2px dashed var(--ink);border-radius:18px;background:#fff;
+      font-size:13px;line-height:1.55
+    }
+    .sources b{display:block;margin-bottom:4px}
+    .sources a{font-weight:800}
+
+    .calc-shell{
+      display:grid;grid-template-columns:1fr .72fr;gap:18px;align-items:start;
+      background:var(--lilac);border:3px solid var(--ink);border-radius:32px;box-shadow:var(--shadow);
+      padding:clamp(20px,4vw,36px)
+    }
+    .calc-left h2{color:#fff}
+    .calc-left>.lede{color:#f6f1ff;margin:12px 0 22px}
+    .calc-groups{display:grid;gap:11px}
+    .calc-group{background:#fff;border:2px solid var(--ink);border-radius:18px;padding:15px}
+    .calc-group>strong{display:block;margin-bottom:10px;font-size:15px}
+    .choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+    .calc-choice{
+      display:flex;align-items:center;gap:8px;border:1.5px solid var(--ink);background:#faf8f3;border-radius:12px;
+      padding:10px 11px;font-weight:750;cursor:pointer;min-height:46px
+    }
+    .calc-choice:has(input:checked){background:var(--yellow);box-shadow:2px 2px 0 var(--ink)}
+    .calc-choice input{accent-color:var(--ink)}
+    select{
+      width:100%;min-height:46px;border:1.5px solid var(--ink);background:#fff;border-radius:11px;padding:8px 10px
+    }
+    .calc-result{
+      position:sticky;top:88px;background:var(--ink);color:#fff;border:3px solid var(--ink);
+      border-radius:24px;padding:24px
+    }
+    .calc-result small{font-weight:950;color:#bbb;letter-spacing:.1em}
+    .calc-result h3{font-size:36px;letter-spacing:-.05em;margin:8px 0}
+    .calc-total{font-size:clamp(46px,6vw,68px);font-weight:1000;color:var(--yellow);letter-spacing:-.065em;line-height:.92}
+    .calc-breakdown{display:grid;gap:8px;margin:20px 0}
+    .line{display:flex;justify-content:space-between;gap:12px;padding-bottom:8px;border-bottom:1px solid #ffffff33;font-size:14px}
+    .calc-result p{color:#ccc;line-height:1.5;font-size:14px}
+    .calc-buttons{display:grid;gap:9px}
+    .copy-status{font-size:12px;color:var(--green);min-height:16px;margin-top:8px;font-weight:800}
+
+    .final{
+      margin:0 0 60px;background:var(--yellow);border:3px solid var(--ink);border-radius:32px;box-shadow:var(--shadow);
+      padding:clamp(30px,6vw,66px);text-align:center
+    }
+    .final h2{font-size:clamp(48px,7vw,84px);max-width:880px;margin:0 auto 18px}
+    .final p{font-size:18px;line-height:1.55;max-width:650px;margin:0 auto 24px}
+    footer{
+      padding:0 0 48px;display:flex;justify-content:space-between;gap:20px;color:#555;font-size:14px
+    }
+    footer a{font-weight:800}
+    .mobile-only{display:none}
+
+    @media(max-width:920px){
+      .navlinks a:not(.nav-cta){display:none}
+      .hero{grid-template-columns:1fr;padding-top:22px}
+      .hero-copy{min-height:0;order:2}
+      .hero-media{min-height:0;aspect-ratio:4/3;order:1}
+      .packages{grid-template-columns:1fr}
+      .package.featured{transform:none}
+      .package{display:grid;grid-template-columns:.82fr 1.18fr}
+      .package-media{aspect-ratio:auto;border-bottom:0;border-right:3px solid var(--ink)}
+      .extras{grid-template-columns:1fr 1fr 1fr}
+      .extra-intro{grid-column:1/-1}
+      .visual-answers{grid-template-columns:1fr 1fr}
+      .calc-shell,.quiz-result{grid-template-columns:1fr}
+      .calc-result{position:static}
+      .section-head{grid-template-columns:1fr}
+    }
+    @media(max-width:620px){
+      .wrap{width:min(100% - 24px,var(--max))}
+      .nav-inner{min-height:62px}
+      .brand{font-size:18px}
+      .nav-cta{padding:9px 12px;font-size:13px}
+      .hero{gap:12px}
+      .hero-copy,.hero-media{border-radius:24px}
+      .hero-copy{padding:24px 19px 27px}
+      h1{font-size:clamp(50px,16vw,74px)}
+      .hero-media{aspect-ratio:1/1.04}
+      .hero-actions{display:grid}
+      .hero-actions .btn{width:100%}
+      .section{padding:43px 0}
+      .section h2{font-size:clamp(40px,12vw,60px)}
+      .package{display:block;border-radius:22px;box-shadow:var(--shadow-sm)}
+      .package-media{aspect-ratio:16/10;border-right:0;border-bottom:3px solid var(--ink)}
+      .extras{grid-template-columns:1fr}
+      .extra-intro{grid-column:auto}
+      .quiz-shell,.calc-shell,.final{border-radius:24px;box-shadow:var(--shadow-sm)}
+      .quiz-top{display:block}
+      .quiz-progress{display:inline-flex;margin-top:12px}
+      .quiz-stage{padding:15px;border-radius:19px}
+      .answers,.visual-answers,.choice-grid{grid-template-columns:1fr}
+      .visual-answer{display:grid;grid-template-columns:95px 1fr;align-items:stretch}
+      .visual-answer .quiz-img{aspect-ratio:1/1;border-bottom:0;border-right:2px solid var(--ink)}
+      .visual-answer .visual-label{align-items:center}
+      .quiz-actions{align-items:stretch}
+      .quiz-actions,.quiz-actions .right{display:grid;grid-template-columns:1fr}
+      .quiz-actions .right{width:100%}
+      .quiz-actions .btn{width:100%}
+      .quiz-result{gap:10px}
+      .result-photo{min-height:0;aspect-ratio:4/5}
+      .result-buttons{display:grid}
+      .result-buttons .btn{width:100%}
+      .calc-result{padding:20px}
+      .final{margin-bottom:40px}
+      footer{display:block;padding-bottom:30px}
+      footer div+div{margin-top:8px}
+      .mobile-only{display:inline}
+    }
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *{transition:none!important}
+    }
   </style>
 </head>
 <body>
-  <div class="page">
-    <div class="announce">REYKJAVÍK · BÓKANIR OPNAR · ÞÚ ÞARFT EKKI AÐ KUNNA AÐ PÓSA</div>
-    <nav class="nav" aria-label="Aðalvalmynd">
-      <a class="brand" href="#top">SNJÓKALLINN</a>
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top">SNJÓKALLINN<span class="brand-dot">.</span></a>
       <div class="navlinks">
-        <a href="#myndir">Myndir</a>
-        <a href="#upplifun">Upplifunin</a>
         <a href="#pakkar">Pakkar</a>
-        <a href="#fyrirtaeki">Fyrirtæki</a>
-        <a class="book" href="https://www.instagram.com/snjokallinn/" target="_blank" rel="noreferrer">Bóka</a>
+        <a href="#kviss">Hvernig myndir viltu?</a>
+        <a href="#verd">Verðreiknivél</a>
+        <a class="nav-cta" href="https://www.instagram.com/snjokallinn/" target="_blank" rel="noreferrer">Hafa samband</a>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <main id="top">
+  <main id="top">
+    <div class="wrap">
       <section class="hero">
         <div class="hero-copy">
-          <div class="eyebrow">PORTRAIT · UPPLIFUN · REYKJAVÍK</div>
-          <h1>ÞÚ ÞARFT EKKI AÐ VERA „GÓÐ/UR Á MYNDUM“.</h1>
-          <p>Þú þarft ekki að kunna að pósa. Það er mitt jobb. Ég leiðbeini þér í gegnum tökuna og bý til myndir sem líta út eins og þú — bara á þínum besta degi.</p>
+          <div class="kicker">Snjókallinn · Portrett í Reykjavík</div>
+          <h1>Finndu sjútið sem er þú.</h1>
+          <p>Veldu pakka, reiknaðu út verðið eða taktu stutt kviss og sjáðu hvaða myndastemning passar við þig. Þú þarft ekki að kunna að pósa — það er mitt jobb.</p>
           <div class="hero-actions">
-            <a class="btn btn-yellow" href="#leidari">Finna rétta myndatöku</a>
-            <a class="btn btn-white" href="#myndir">Sjá útkomuna</a>
+            <a class="btn btn-dark" href="#kviss">Taka myndakviss →</a>
+            <a class="btn" href="#verd">Reikna verð</a>
           </div>
         </div>
-        <div class="hero-photo">
-          <img src="https://cdn.myportfolio.com/f7427c9e-06b2-40f4-8997-ca476eb04551/adc1d3c7-5e8e-4efa-94b9-372cf9b2c782_rw_1920.JPG?h=60e3181b8c7becda562cd8c4bb2d5e0c" alt="Alex Snjókallinn ljósmyndari" fetchpriority="high">
-          <div class="hud"><span class="hud-label">SNJÓKALLINN · REC</span></div>
-        </div>
-      </section>
-
-      <section class="section" id="myndir">
-        <div class="section-head">
-          <h2>ÚTKOMAN FYRST.</h2>
-          <p class="section-lede">Ekki þrjár myndir úr sama setup-i. Hér færðu fjölbreytni, karakter og myndir sem líða eins og þú hafir átt moment.</p>
-        </div>
-        <div class="gallery">
-          <figure class="shot"><img loading="eager" src="https://cdn.myportfolio.com/f7427c9e-06b2-40f4-8997-ca476eb04551/863c8fb2-2c85-432d-8a16-4dd6ae2a3959_rw_3840.jpg?h=ef4119d179bffa6ebcd8e44d48345c93" alt="Portrait eftir Snjókallinn"><span class="tag">PORTRAIT</span></figure>
-          <figure class="shot"><img loading="lazy" src="https://cdn.myportfolio.com/f7427c9e-06b2-40f4-8997-ca476eb04551/2e1083bd-acba-4d12-92ed-977b4cc93717_rw_3840.jpg?h=cce04ceb3c6d25dd1ac6c91c7b58b3a8" alt="Portrait eftir Snjókallinn"><span class="tag">EDITORIAL</span></figure>
-          <figure class="shot"><img loading="lazy" src="https://cdn.myportfolio.com/f7427c9e-06b2-40f4-8997-ca476eb04551/ed688b3e-2cf8-47f6-91ed-152de41f8df3_rw_3840.jpg?h=90f9f3e3e248e950de9cde7bb3e0986a" alt="Portrait eftir Snjókallinn"><span class="tag">MAIN CHARACTER</span></figure>
-        </div>
-        <div class="gallery-wide">
-          <figure class="shot"><img loading="lazy" src="https://cdn.myportfolio.com/f7427c9e-06b2-40f4-8997-ca476eb04551/2b545421-d0ed-4424-9ba7-d2f7219f2773_rw_3840.jpg?h=068d2ee0340abdfedf673e0acaf3b17f" alt="Ljósmynd eftir Snjókallinn"></figure>
-          <figure class="shot"><img loading="lazy" src="https://cdn.myportfolio.com/f7427c9e-06b2-40f4-8997-ca476eb04551/a6351271-d96e-428c-b007-0008d5cbbce9_rw_1920.jpg?h=b94f27e996be8c56d6371439c2f76221" alt="Ljósmynd eftir Snjókallinn"></figure>
-          <figure class="shot"><img loading="lazy" src="https://cdn.myportfolio.com/f7427c9e-06b2-40f4-8997-ca476eb04551/8dadcaff-2ca5-4474-8efb-b5592cbb9ed4_rw_3840.jpg?h=2219024029b20a23429d0c0467a4510a" alt="Ljósmynd eftir Snjókallinn"></figure>
-          <figure class="shot"><img loading="lazy" src="https://cdn.myportfolio.com/f7427c9e-06b2-40f4-8997-ca476eb04551/4f003b76-2914-4727-99c3-c6e6d6e803db_rw_3840.jpg?h=be1cb2e4f666475d5372d2d0eaa9bbe1" alt="Ljósmynd eftir Snjókallinn"></figure>
-        </div>
-      </section>
-
-      <section class="section" id="upplifun">
-        <div class="section-head">
-          <h2>ÞETTA ER EKKI „STATTU ÞAR OG BROSTU“.</h2>
-          <p class="section-lede">Við byggjum myndatökuna saman. Ég sé um leiðsögnina — þú þarft bara að mæta.</p>
-        </div>
-        <div class="proof">
-          <article class="proof-card">
-            <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 19h16M6 16l4-5 3 3 2-2 3 4M5 5h14v14H5z"/></svg></div>
-            <h3>Hugmynd áður en við mætum</h3><p>Moodboard, stemning og plan. Við vitum í hvaða átt við erum að fara áður en fyrsta myndin er tekin.</p>
-          </article>
-          <article class="proof-card">
-            <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M5 20c1-5 3.5-7 7-7s6 2 7 7M3 5l2-2m16 2-2-2"/></svg></div>
-            <h3>Ég segi þér hvað þú átt að gera</h3><p>Hendur, haka, axlir, augnaráð — þú færð raunverulega pósuleiðsögn í staðinn fyrir „bara vertu náttúruleg/ur“.</p>
-          </article>
-          <article class="proof-card">
-            <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 7h16v12H4zM8 7l2-3h4l2 3"/><circle cx="12" cy="13" r="3"/></svg></div>
-            <h3>Þú velur myndirnar</h3><p>Ég sendi úrval í gallerí. Þú velur uppáhaldsmyndirnar og ég tek þær alla leið í fullunna vinnslu.</p>
-          </article>
+        <div class="hero-media">
+          <img src="https://cdn.myportfolio.com/f7427c9e-06b2-40f4-8997-ca476eb04551/863c8fb2-2c85-432d-8a16-4dd6ae2a3959_rw_3840.jpg?h=ef4119d179bffa6ebcd8e44d48345c93" alt="Portrett eftir Snjókallinn" fetchpriority="high">
+          <div class="viewfinder"><span class="rec">SNJÓKALLINN</span></div>
         </div>
       </section>
 
       <section class="section" id="pakkar">
-        <div class="section-head"><h2>PAKKARNIR.</h2><p class="section-lede">Einfalt verð. Engin ráðgáta. Veldu hversu stórt moment þú vilt gera úr þessu.</p></div>
+        <div class="section-head">
+          <h2>Þrjár leiðir í myndatöku.</h2>
+          <p class="lede">Frá stuttu og þægilegu sjúti yfir í fullt main-character moment. Allir pakkar innihalda leiðsögn í pósum og svipbrigðum — þú þarft ekki að mæta „tilbúin/n“ fyrir framan myndavélina.</p>
+        </div>
+
         <div class="packages">
-          <article class="pkg">
-            <span class="badge">STUTT + ÞÆGILEGT</span><h3>Mini sjút</h3><div class="price">35.000 kr.</div>
-            <ul><li>Um 30 mínútur</li><li>3 fullunnar myndir</li><li>Ein staðsetning</li><li>Pósu- og svipbrigðaleiðsögn</li><li>Myndaval í netgalleríi</li></ul>
-            <div class="mini">Perfect þegar þú þarft fáar, andskoti flottar myndir án þess að gera heilan dag úr því.</div>
+          <article class="package">
+            <div class="package-media">
+              <img src="https://cdn.myportfolio.com/f7427c9e-06b2-40f4-8997-ca476eb04551/a6351271-d96e-428c-b007-0008d5cbbce9_rw_1920.jpg?h=b94f27e996be8c56d6371439c2f76221" alt="Mini sjút">
+            </div>
+            <div class="package-body">
+              <span class="pill">Stutt + þægilegt</span>
+              <h3>Mini sjút</h3>
+              <div class="price">35.000 kr.</div>
+              <ul>
+                <li>Um 30 mínútur</li>
+                <li>3 fullunnar myndir</li>
+                <li>Ein staðsetning</li>
+                <li>Pósu- og svipbrigðaleiðsögn</li>
+                <li>Myndaval í netgalleríi</li>
+              </ul>
+              <p class="package-note">Perfect þegar þú þarft fáar, andskoti flottar myndir án þess að gera heilan dag úr því.</p>
+            </div>
           </article>
-          <article class="pkg featured">
-            <span class="badge">VINSÆLAST</span><h3>Snjókallinn sjút</h3><div class="price">59.000 kr.</div>
-            <ul><li>60–75 mínútur</li><li>10 fullunnar myndir</li><li>Ein staðsetning</li><li>1–2 look</li><li>Hugmyndavinna + leiðsögn</li><li>Myndaval í netgalleríi</li></ul>
-            <div class="mini">Mest bang for your buck — nóg pláss til að verða þægileg/ur og ná fjölbreyttri seríu.</div>
+
+          <article class="package featured">
+            <div class="package-media">
+              <img src="https://cdn.myportfolio.com/f7427c9e-06b2-40f4-8997-ca476eb04551/2e1083bd-acba-4d12-92ed-977b4cc93717_rw_3840.jpg?h=cce04ceb3c6d25dd1ac6c91c7b58b3a8" alt="Snjókallinn sjút">
+            </div>
+            <div class="package-body">
+              <span class="pill">Vinsælast</span>
+              <h3>Snjókallinn sjút</h3>
+              <div class="price">59.000 kr.</div>
+              <ul>
+                <li>60–75 mínútur</li>
+                <li>10 fullunnar myndir</li>
+                <li>Ein staðsetning</li>
+                <li>1–2 föt / look</li>
+                <li>Hugmyndavinna + leiðsögn</li>
+                <li>Myndaval í netgalleríi</li>
+              </ul>
+              <p class="package-note">Mest bang for your buck — nóg pláss til að verða þægileg/ur og ná fjölbreyttri seríu.</p>
+            </div>
           </article>
-          <article class="pkg">
-            <span class="badge">MAIN CHARACTER</span><h3>Main Character sjút</h3><div class="price">89.000 kr.</div>
-            <ul><li>1,5–2 klukkustundir</li><li>20 fullunnar myndir</li><li>1–2 nálægar staðsetningar</li><li>2–3 look / outfit</li><li>Moodboard + concept</li><li>Leiðsögn + gallerí</li></ul>
-            <div class="mini">Þegar hugmyndin á að fá að fara alla leið. Meira rými, meiri fjölbreytni, meira ækonik.</div>
+
+          <article class="package">
+            <div class="package-media">
+              <img src="https://cdn.myportfolio.com/f7427c9e-06b2-40f4-8997-ca476eb04551/ed688b3e-2cf8-47f6-91ed-152de41f8df3_rw_3840.jpg?h=90f9f3e3e248e950de9cde7bb3e0986a" alt="Main Character sjút">
+            </div>
+            <div class="package-body">
+              <span class="pill">Main character</span>
+              <h3>Main Character sjút</h3>
+              <div class="price">89.000 kr.</div>
+              <ul>
+                <li>1,5–2 klukkustundir</li>
+                <li>20 fullunnar myndir</li>
+                <li>1–2 nálægar staðsetningar</li>
+                <li>2–3 föt / look</li>
+                <li>Moodboard + concept</li>
+                <li>Leiðsögn + netgallerí</li>
+              </ul>
+              <p class="package-note">Þegar hugmyndin á að fá að fara alla leið. Meira rými, meiri fjölbreytni, meira ækonik.</p>
+            </div>
           </article>
+        </div>
+
+        <div class="extras" aria-label="Aukamyndaverð">
+          <div class="extra-intro"><h3>Viltu fleiri myndir?</h3><p>Þú velur uppáhaldið úr netgalleríinu og getur bætt við eftir á.</p></div>
+          <div class="extra"><b>4.000 kr.</b><span>1 aukamynd</span></div>
+          <div class="extra"><b>15.000 kr.</b><span>5 aukamyndir</span></div>
+          <div class="extra"><b>25.000 kr.</b><span>10 aukamyndir</span></div>
         </div>
       </section>
 
-      <section class="section guide" id="leidari">
-        <div class="guide-top">
-          <div>
-            <div class="eyebrow" style="color:#111">VERÐLEIÐARINN</div>
-            <h2>HVAÐ PASSAR VIÐ ÞIG?</h2>
-            <p style="line-height:1.55">Svaraðu fjórum litlum spurningum. Ég vel grunnpakka og reikna út áætlað verð með því sem þú bætir við.</p>
-            <div class="questions">
-              <div class="q"><b>1. Hvað þarftu?</b><div class="option-grid"><label class="choice"><input type="radio" name="purpose" value="personal" checked> Góðar myndir af mér</label><label class="choice"><input type="radio" name="purpose" value="idea"> Ég er með ákveðna hugmynd</label><label class="choice"><input type="radio" name="purpose" value="work"> Myndir fyrir vinnu</label></div></div>
-              <div class="q"><b>2. Hversu mikið rými viltu?</b><div class="option-grid"><label class="choice"><input type="radio" name="time" value="30" checked> Um 30 mín</label><label class="choice"><input type="radio" name="time" value="60"> Um klukkustund</label><label class="choice"><input type="radio" name="time" value="120"> Allt að 2 klst.</label></div></div>
-              <div class="q"><b>3. Hvenær?</b><div class="option-grid"><label class="choice"><input type="radio" name="when" value="day" checked> Virkur dagur fyrir kl. 17</label><label class="choice"><input type="radio" name="when" value="premium"> Kvöld eða helgi (+20%)</label></div></div>
-              <div class="q"><b>4. Aukahlutir</b><div class="option-grid"><label class="choice"><input id="bts" type="checkbox"> BTS myndband (+20.000 kr.)</label><label class="choice" style="display:block">Aukamyndir<select id="extras"><option value="0">Engar</option><option value="4000">1 mynd · +4.000</option><option value="15000">5 myndir · +15.000</option><option value="25000">10 myndir · +25.000</option></select></label></div></div>
+      <section class="section" id="kviss">
+        <div class="quiz-shell">
+          <div class="quiz-top">
+            <div>
+              <div class="kicker">Hvernig myndir viltu?</div>
+              <h2>Finndu þína myndastemningu.</h2>
+              <p class="lede">Ekki persónuleikapróf — bara fljótleg leið til að sjá hvaða ljós, orka og myndstíll toga mest í þig.</p>
+            </div>
+            <div class="quiz-progress" id="quizProgress">Spurning 1 af 6</div>
+          </div>
+
+          <div class="quiz-stage" id="quizStage">
+            <h3 id="quizQuestion"></h3>
+            <div class="answers" id="quizAnswers"></div>
+            <div class="quiz-actions">
+              <button class="btn" id="quizBack" type="button">← Til baka</button>
+              <div class="right">
+                <button class="btn btn-dark" id="quizNext" type="button">Næsta →</button>
+              </div>
             </div>
           </div>
-          <aside class="result" aria-live="polite"><small>ÉG MYNDI VELJA</small><h3 id="pick">Mini sjút</h3><div class="result-price" id="total">35.000 kr.</div><p id="why">Stutt og þægileg leið til að fá nokkrar mergjaðar myndir án þess að gera stórt production úr þessu.</p><a class="btn btn-yellow" href="https://www.instagram.com/snjokallinn/" target="_blank" rel="noreferrer">Bóka þessa myndatöku</a></aside>
+
+          <div class="quiz-result" id="quizResult" aria-live="polite">
+            <div class="result-copy">
+              <div class="kicker">Þín myndastemning</div>
+              <h3 id="resultTitle">Hlýtt & glowy</h3>
+              <p id="resultText"></p>
+              <div class="result-pack"><small>GÓÐUR UPPHAFSPUNKTUR</small><strong id="resultPackage"></strong></div>
+              <div class="result-buttons">
+                <a class="btn btn-yellow" href="#verd" id="resultCalc">Reikna sjútið</a>
+                <button class="btn" type="button" id="quizReset">Prófa aftur</button>
+              </div>
+            </div>
+            <div class="result-photo"><img id="resultImage" alt="Dæmi um myndastemningu"></div>
+          </div>
+
+          <div class="sources">
+            <b>Hvernig kvissið var búið til</b>
+            Kvissið byggir á raunverulegum sjónrænum þáttum sem ljósmyndarar vinna með — m.a. lighting, editorial nálgun, candid/posed nálgun, hreyfingu og direct flash. 
+            <a href="https://www.adobe.com/creativecloud/photography/discover/editorial-photography.html" target="_blank" rel="noreferrer">Adobe: editorial photography</a> ·
+            <a href="https://www.usa.canon.com/learning/training-articles/training-articles-list/portrait-photography-tips" target="_blank" rel="noreferrer">Canon: portrait photography tips</a>
+          </div>
         </div>
       </section>
 
-      <section class="section">
-        <div class="section-head"><h2>FRÁ „ÉG KANN EKKI AÐ PÓSA“ Í GALLERÍ.</h2></div>
-        <div class="process">
-          <article class="step"><span class="step-num">01</span><h3>Hugmynd</h3><p>Við finnum hvað þú vilt fá út úr tökunni.</p></article>
-          <article class="step"><span class="step-num">02</span><h3>Prep</h3><p>Moodboard, outfit og stemning fá að smella saman.</p></article>
-          <article class="step"><span class="step-num">03</span><h3>Myndatakan</h3><p>Ég leiðbeini þér í gegnum allt. Engin stíf pósun.</p></article>
-          <article class="step"><span class="step-num">04</span><h3>Myndaval</h3><p>Gallerí kemur yfirleitt innan um 7 daga.</p></article>
-          <article class="step"><span class="step-num">05</span><h3>Afhending</h3><p>Fullunnar myndir 1–2 vikum eftir að þú velur.</p></article>
+      <section class="section" id="verd">
+        <div class="calc-shell">
+          <div class="calc-left">
+            <div class="kicker" style="color:#fff">Verðreiknivél</div>
+            <h2>Hvað kostar mitt sjút?</h2>
+            <p class="lede">Veldu hvers konar myndatöku þú ert að hugsa um. Reiknivélin velur grunnpakka og bætir við tímasetningu og aukahlutum.</p>
+
+            <div class="calc-groups">
+              <div class="calc-group">
+                <strong>1. Hvað þarftu?</strong>
+                <div class="choice-grid">
+                  <label class="calc-choice"><input type="radio" name="purpose" value="personal" checked> Góðar myndir af mér</label>
+                  <label class="calc-choice"><input type="radio" name="purpose" value="idea"> Ég er með ákveðna hugmynd</label>
+                  <label class="calc-choice"><input type="radio" name="purpose" value="work"> Myndir fyrir vinnu</label>
+                </div>
+              </div>
+
+              <div class="calc-group">
+                <strong>2. Hversu mikið rými viltu?</strong>
+                <div class="choice-grid">
+                  <label class="calc-choice"><input type="radio" name="time" value="30" checked> Um 30 mín</label>
+                  <label class="calc-choice"><input type="radio" name="time" value="60"> Um klukkustund</label>
+                  <label class="calc-choice"><input type="radio" name="time" value="120"> Allt að 2 klst.</label>
+                </div>
+              </div>
+
+              <div class="calc-group">
+                <strong>3. Hvenær?</strong>
+                <div class="choice-grid">
+                  <label class="calc-choice"><input type="radio" name="when" value="day" checked> Virkur dagur fyrir kl. 17</label>
+                  <label class="calc-choice"><input type="radio" name="when" value="premium"> Kvöld eða helgi (+20%)</label>
+                </div>
+              </div>
+
+              <div class="calc-group">
+                <strong>4. Viðbætur</strong>
+                <div class="choice-grid" style="margin-bottom:8px">
+                  <label class="calc-choice"><input id="bts" type="checkbox"> BTS myndband (+20.000 kr.)</label>
+                </div>
+                <label>
+                  <span style="display:block;font-size:13px;font-weight:800;margin-bottom:6px">Aukamyndir</span>
+                  <select id="extras">
+                    <option value="0">Engar aukamyndir</option>
+                    <option value="4000">1 mynd · +4.000 kr.</option>
+                    <option value="15000">5 myndir · +15.000 kr.</option>
+                    <option value="25000">10 myndir · +25.000 kr.</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <aside class="calc-result" aria-live="polite">
+            <small>ÉG MYNDI VELJA</small>
+            <h3 id="calcPackage">Mini sjút</h3>
+            <div class="calc-total" id="calcTotal">35.000 kr.</div>
+            <div class="calc-breakdown">
+              <div class="line"><span>Grunnpakki</span><b id="baseLine">35.000 kr.</b></div>
+              <div class="line"><span>Tímasetning</span><b id="timeLine">0 kr.</b></div>
+              <div class="line"><span>Viðbætur</span><b id="extrasLine">0 kr.</b></div>
+            </div>
+            <p id="calcWhy">Stutt og þægileg leið til að fá nokkrar mergjaðar myndir án þess að gera stórt production úr þessu.</p>
+            <div class="calc-buttons">
+              <button class="btn btn-yellow" id="copyQuote" type="button">Afrita tillögu</button>
+              <a class="btn" href="https://www.instagram.com/snjokallinn/" target="_blank" rel="noreferrer">Senda fyrirspurn</a>
+            </div>
+            <div class="copy-status" id="copyStatus"></div>
+          </aside>
         </div>
       </section>
 
-      <section class="section about">
-        <div class="about-photo"><img loading="lazy" src="https://cdn.myportfolio.com/f7427c9e-06b2-40f4-8997-ca476eb04551/adc1d3c7-5e8e-4efa-94b9-372cf9b2c782_rw_1920.JPG?h=60e3181b8c7becda562cd8c4bb2d5e0c" alt="Alex Snær Welker Pétursson — Snjókallinn"></div>
-        <div class="about-copy"><div class="eyebrow">HVER ER SNJÓKALLINN?</div><h2>ÉG HEITI ALEX.</h2><p class="quote">„Ég trúi því að allir myndist vel — þeir hafa bara ekki allir fengið rétta tækifærið til þess.“</p><p>Ljósmyndun byrjaði hjá mér í gegnum kvikmyndagerð, leik með lýsingu og löngun til að skapa myndir sem maður verður að horfa á aftur. Í dag snýst þetta jafn mikið um upplifunina og lokaútkomuna.</p><p>Ég tek ekki bara myndir af þér — ég vinn með þér. Við finnum hugmynd, getum sett saman Pinterest moodboard og jafnvel playlistann sem kemur þér í rétt væb. Mitt jobb er að skapa rými þar sem þú þarft ekki að vera „góð/ur fyrir framan myndavél“.</p><a class="btn btn-yellow" href="https://www.instagram.com/snjokallinn/" target="_blank" rel="noreferrer">@snjokallinn</a></div>
+      <section class="final">
+        <div class="kicker" style="justify-content:center">Snjókallinn</div>
+        <h2>Þú þarft ekki sérstakt tilefni.</h2>
+        <p>Stundum er nóg að vilja eiga myndir af sjálfri/sjálfum sér sem láta mann segja „ó mæ got — þetta er ég?“</p>
+        <a class="btn btn-dark" href="https://www.instagram.com/snjokallinn/" target="_blank" rel="noreferrer">Hafa samband →</a>
       </section>
 
-      <section class="section company" id="fyrirtaeki">
-        <div><div class="eyebrow" style="color:#fff">FYRIRTÆKI · TEYMI · BRAND</div><h2>FÓLK LÍTUR BETUR ÚT EN STOCK PHOTO.</h2><p>Starfsmannamyndir, branding, herferðir og content þegar þú vilt að manneskjurnar í fyrirtækinu líti út eins og raunverulegt fólk — bara með aðeins meiri main-character orku.</p><p><b>Verkefni frá 65.000 kr. + VSK.</b> Umfang, notkunarréttur og fjöldi mynda er verðlagt eftir verkefni.</p><a class="btn btn-white" href="https://www.instagram.com/snjokallinn/" target="_blank" rel="noreferrer">Fá verð í verkefni</a></div>
-        <aside class="company-side"><h3>Hentar t.d. fyrir</h3><ul><li>Starfsmannamyndir sem mega hafa persónuleika</li><li>LinkedIn / vefsíðu / pressu</li><li>Social content og herferðir</li><li>Artist / creator branding</li><li>Myndabanka fyrir fyrirtæki</li></ul></aside>
-      </section>
-
-      <section class="section">
-        <div class="section-head"><h2>ALGENGT „EN…“</h2></div>
-        <div class="faq">
-          <details><summary>„En ég er ekki photogenic.“</summary><p>Perfect. Þú þarft ekki að vita hvað þú átt að gera. Leiðsögnin er hluti af þjónustunni — ekki eitthvað sem þú átt að mæta með fyrirfram.</p></details>
-          <details><summary>Hvar er myndað?</summary><p>Úti, heima, á vinnustað, hóteli eða í leigðu stúdíói — staðsetningin er valin út frá conceptinu og því hvernig þú vilt að myndirnar líði.</p></details>
-          <details><summary>Get ég keypt fleiri myndir?</summary><p>Já. Ein aukamynd er 4.000 kr., 5 myndir 15.000 kr. og 10 myndir 25.000 kr.</p></details>
-          <details><summary>Hvenær fæ ég myndirnar?</summary><p>Myndaval kemur yfirleitt innan um 7 daga. Eftir að þú velur eru fullunnar myndir yfirleitt afhentar innan 1–2 vikna.</p></details>
-        </div>
-      </section>
-
-      <section class="section final"><h2>ERTU TIL Í AÐ SJÁ ÞIG Í BETRA LJÓSI?</h2><p>Þú þarft ekki að kunna að pósa. Komdu bara með sjálfa/n þig — ég sé um restina.</p><a class="btn" style="background:#111;color:#fff" href="https://www.instagram.com/snjokallinn/" target="_blank" rel="noreferrer">Bóka myndatöku</a></section>
-    </main>
-
-    <footer class="foot"><div><b>SNJÓKALLINN</b> · Reykjavík</div><div><a href="https://www.instagram.com/snjokallinn/" target="_blank" rel="noreferrer">Instagram</a> · <a href="#top">Upp ↑</a></div></footer>
-  </div>
+      <footer>
+        <div><b>SNJÓKALLINN</b> · Portrett í Reykjavík · <a href="https://www.instagram.com/snjokallinn/" target="_blank" rel="noreferrer">@snjokallinn</a></div>
+        <div><a href="#pakkar">Pakkar</a> · <a href="#kviss">Kviss</a> · <a href="#verd">Verð</a> · <a href="#top">Upp ↑</a></div>
+      </footer>
+    </div>
+  </main>
 
   <script>
-    const $=s=>document.querySelector(s);
-    function calc(){
-      const t=$('input[name="time"]:checked').value;
-      const purpose=$('input[name="purpose"]:checked').value;
-      let name='Mini sjút',base=35000,why='Stutt og þægileg leið til að fá nokkrar mergjaðar myndir án þess að gera stórt production úr þessu.';
-      if(t==='60'||purpose==='work'){name='Snjókallinn sjút';base=59000;why='Mest jafnvægið milli tíma, fjölbreytni og fjölda mynda — og pláss til að verða almennilega þægileg/ur.'}
-      if(t==='120'||purpose==='idea'){name='Main Character sjút';base=89000;why='Þegar þú ert með concept eða vilt fleiri look og meira rými til að gera eitthvað virkilega júník.'}
-      if($('input[name="when"]:checked').value==='premium')base*=1.2;
-      if($('#bts').checked)base+=20000;
-      base+=Number($('#extras').value);
-      $('#pick').textContent=name;
-      $('#total').textContent=Math.round(base).toLocaleString('is-IS')+' kr.';
-      $('#why').textContent=why;
+    const quiz = [
+      {
+        q: 'Hvaða mynd fær þig til að stoppa?',
+        visual: true,
+        answers: [
+          {label:'Hlýtt, mjúkt og draumkennt', style:'glowy', img:'https://cdn.myportfolio.com/f7427c9e-06b2-40f4-8997-ca476eb04551/2b545421-d0ed-4424-9ba7-d2f7219f2773_rw_3840.jpg?h=068d2ee0340abdfedf673e0acaf3b17f'},
+          {label:'Djarft, litað og editorial', style:'editorial', img:'https://cdn.myportfolio.com/f7427c9e-06b2-40f4-8997-ca476eb04551/2e1083bd-acba-4d12-92ed-977b4cc93717_rw_3840.jpg?h=cce04ceb3c6d25dd1ac6c91c7b58b3a8'},
+          {label:'Flass, hreyfing og smá kaos', style:'flash', img:'https://cdn.myportfolio.com/f7427c9e-06b2-40f4-8997-ca476eb04551/8dadcaff-2ca5-4474-8efb-b5592cbb9ed4_rw_3840.jpg?h=2219024029b20a23429d0c0467a4510a'},
+          {label:'Náttúrulegt, lifandi og afslappað', style:'natural', img:'https://cdn.myportfolio.com/f7427c9e-06b2-40f4-8997-ca476eb04551/4f003b76-2914-4727-99c3-c6e6d6e803db_rw_3840.jpg?h=be1cb2e4f666475d5372d2d0eaa9bbe1'}
+        ]
+      },
+      {
+        q:'Hvernig viltu að ljósið líði?',
+        answers:[
+          {label:'Hlýtt, mjúkt og glowy',style:'glowy'},
+          {label:'Beint, hrátt og með karakter',style:'flash'},
+          {label:'Mótað, dramatískt og með lit',style:'editorial'},
+          {label:'Eins og fallegasta dagsljósið',style:'natural'}
+        ]
+      },
+      {
+        q:'Hvað hljómar best í tökunni?',
+        answers:[
+          {label:'Ég vil nákvæma leiðsögn og finna clean pósur',style:'editorial'},
+          {label:'Gefðu mér verkefni, hreyfingu og eitthvað að gera',style:'natural'},
+          {label:'Leiðbeindu mér en haltu þessu mjúku og rólegu',style:'glowy'},
+          {label:'Prófum alls konar — flass, movement, weird angles',style:'flash'}
+        ]
+      },
+      {
+        q:'Hvaða staðsetning kallar mest á þig?',
+        answers:[
+          {label:'Kvöldljós, gluggaljós eða mjúkt úti',style:'glowy'},
+          {label:'Stúdíó eða rými sem við getum umbreytt',style:'editorial'},
+          {label:'Borgin, partý-væb eða eitthvað ófyrirsjáanlegt',style:'flash'},
+          {label:'Persónulegur staður eða fallegt umhverfi',style:'natural'}
+        ]
+      },
+      {
+        q:'Hvað viltu helst fá út úr myndatökunni?',
+        answers:[
+          {label:'Myndir sem gætu verið úr herferð eða á forsíðu',style:'editorial'},
+          {label:'Fallegar myndir sem eldast vel',style:'glowy'},
+          {label:'Orku — eitthvað sem maður stoppar við',style:'flash'},
+          {label:'Minningu sem líður eins og alvöru augnablik',style:'natural'}
+        ]
+      },
+      {
+        q:'Veldu þrjú orð sem passa best.',
+        answers:[
+          {label:'Mjúkt · hlýtt · dreamy',style:'glowy'},
+          {label:'Ækonik · djarft · polished',style:'editorial'},
+          {label:'Spontant · hrátt · sturlað',style:'flash'},
+          {label:'Lifandi · einlægt · effortless',style:'natural'}
+        ]
+      }
+    ];
+
+    const results = {
+      glowy:{
+        title:'Hlýtt & glowy',
+        text:'Þú togar í mjúkt ljós, hlýja tóna og myndir sem líða aðeins eins og minning. Við getum unnið með golden hour, gluggaljós, Pro-Mist væb og rólega leiðsögn — fallegt án þess að verða stíft.',
+        pack:'Snjókallinn sjút · 59.000 kr.',
+        time:'60',
+        img:'https://cdn.myportfolio.com/f7427c9e-06b2-40f4-8997-ca476eb04551/2b545421-d0ed-4424-9ba7-d2f7219f2773_rw_3840.jpg?h=068d2ee0340abdfedf673e0acaf3b17f'
+      },
+      editorial:{
+        title:'Ækonik editorial',
+        text:'Þú vilt myndir með hugmynd, formi og sterkri sjónrænni stefnu. Ljós, styling, litir og pósur mega vera markvissari — meira „campaign“, minna „bara góð mynd“.',
+        pack:'Main Character sjút · 89.000 kr.',
+        time:'120',
+        img:'https://cdn.myportfolio.com/f7427c9e-06b2-40f4-8997-ca476eb04551/2e1083bd-acba-4d12-92ed-977b4cc93717_rw_3840.jpg?h=cce04ceb3c6d25dd1ac6c91c7b58b3a8'
+      },
+      flash:{
+        title:'Dispo-flass & orka',
+        text:'Þú vilt að myndirnar hafi púls. Direct flash, hreyfing, smá filmutilfinning og moment sem mega vera aðeins ófullkomin — af því það er það sem gerir þau geggjuð.',
+        pack:'Snjókallinn sjút · 59.000 kr.',
+        time:'60',
+        img:'https://cdn.myportfolio.com/f7427c9e-06b2-40f4-8997-ca476eb04551/8dadcaff-2ca5-4474-8efb-b5592cbb9ed4_rw_3840.jpg?h=2219024029b20a23429d0c0467a4510a'
+      },
+      natural:{
+        title:'Náttúrulegt & lifandi',
+        text:'Þú togar í myndir sem líða eins og alvöru augnablik frekar en fullkomlega stillt pós. Við notum movement prompts, einfaldar aðstæður og leiðsögn sem lætur þig gleyma myndavélinni aðeins.',
+        pack:'Mini eða Snjókallinn sjút · frá 35.000 kr.',
+        time:'30',
+        img:'https://cdn.myportfolio.com/f7427c9e-06b2-40f4-8997-ca476eb04551/4f003b76-2914-4727-99c3-c6e6d6e803db_rw_3840.jpg?h=be1cb2e4f666475d5372d2d0eaa9bbe1'
+      }
+    };
+
+    const stage = document.getElementById('quizStage');
+    const questionEl = document.getElementById('quizQuestion');
+    const answersEl = document.getElementById('quizAnswers');
+    const progressEl = document.getElementById('quizProgress');
+    const backBtn = document.getElementById('quizBack');
+    const nextBtn = document.getElementById('quizNext');
+    const resultEl = document.getElementById('quizResult');
+    const resetBtn = document.getElementById('quizReset');
+    const resultCalc = document.getElementById('resultCalc');
+
+    let quizIndex = 0;
+    const quizAnswers = Array(quiz.length).fill(null);
+
+    function renderQuiz(){
+      const item = quiz[quizIndex];
+      progressEl.textContent = `Spurning ${quizIndex+1} af ${quiz.length}`;
+      questionEl.textContent = item.q;
+      answersEl.className = item.visual ? 'answers visual-answers' : 'answers';
+      answersEl.innerHTML = '';
+
+      item.answers.forEach((answer, idx)=>{
+        const btn = document.createElement('label');
+        btn.className = 'answer' + (item.visual ? ' visual-answer' : '') + (quizAnswers[quizIndex] === idx ? ' selected' : '');
+        if(item.visual){
+          btn.innerHTML = `
+            <input type="radio" name="quiz-answer" value="${idx}">
+            <div class="quiz-img"><img src="${answer.img}" alt=""></div>
+            <div class="visual-label"><span class="dot"></span><span>${answer.label}</span></div>`;
+        } else {
+          btn.innerHTML = `<input type="radio" name="quiz-answer" value="${idx}"><span class="dot"></span><span>${answer.label}</span>`;
+        }
+        btn.addEventListener('click',()=>{
+          quizAnswers[quizIndex] = idx;
+          [...answersEl.children].forEach(el=>el.classList.remove('selected'));
+          btn.classList.add('selected');
+        });
+        answersEl.appendChild(btn);
+      });
+
+      backBtn.style.visibility = quizIndex === 0 ? 'hidden' : 'visible';
+      nextBtn.textContent = quizIndex === quiz.length-1 ? 'Sjá útkomu →' : 'Næsta →';
     }
-    document.querySelectorAll('input,select').forEach(el=>el.addEventListener('change',calc));calc();
+
+    function showQuizResult(){
+      const scores = {glowy:0,editorial:0,flash:0,natural:0};
+      quizAnswers.forEach((answerIdx, qIdx)=>{
+        if(answerIdx !== null){
+          const style = quiz[qIdx].answers[answerIdx].style;
+          scores[style]++;
+        }
+      });
+      const priority = ['glowy','editorial','flash','natural'];
+      let best = priority[0];
+      priority.forEach(style=>{
+        if(scores[style] > scores[best]) best = style;
+      });
+      const r = results[best];
+      document.getElementById('resultTitle').textContent = r.title;
+      document.getElementById('resultText').textContent = r.text;
+      document.getElementById('resultPackage').textContent = r.pack;
+      document.getElementById('resultImage').src = r.img;
+      stage.style.display = 'none';
+      resultEl.classList.add('show');
+      progressEl.textContent = 'Útkoma';
+      resultCalc.dataset.time = r.time;
+      resultEl.scrollIntoView({behavior:'smooth',block:'nearest'});
+    }
+
+    backBtn.addEventListener('click',()=>{
+      if(quizIndex>0){quizIndex--;renderQuiz();}
+    });
+
+    nextBtn.addEventListener('click',()=>{
+      if(quizAnswers[quizIndex] === null){
+        answersEl.animate(
+          [{transform:'translateX(0)'},{transform:'translateX(-6px)'},{transform:'translateX(6px)'},{transform:'translateX(0)'}],
+          {duration:240}
+        );
+        return;
+      }
+      if(quizIndex === quiz.length-1){showQuizResult();return;}
+      quizIndex++;
+      renderQuiz();
+    });
+
+    resetBtn.addEventListener('click',()=>{
+      quizIndex = 0;
+      quizAnswers.fill(null);
+      resultEl.classList.remove('show');
+      stage.style.display = '';
+      renderQuiz();
+      stage.scrollIntoView({behavior:'smooth',block:'nearest'});
+    });
+
+    resultCalc.addEventListener('click',()=>{
+      const time = resultCalc.dataset.time;
+      const input = document.querySelector(`input[name="time"][value="${time}"]`);
+      if(input){input.checked=true;calc();}
+    });
+
+    function kr(n){return Math.round(n).toLocaleString('is-IS')+' kr.'}
+
+    function calc(){
+      const t = document.querySelector('input[name="time"]:checked').value;
+      const purpose = document.querySelector('input[name="purpose"]:checked').value;
+      const premium = document.querySelector('input[name="when"]:checked').value === 'premium';
+      const bts = document.getElementById('bts').checked;
+      const extra = Number(document.getElementById('extras').value);
+
+      let name='Mini sjút', base=35000;
+      let why='Stutt og þægileg leið til að fá nokkrar mergjaðar myndir án þess að gera stórt production úr þessu.';
+
+      if(t==='60' || purpose==='work'){
+        name='Snjókallinn sjút';
+        base=59000;
+        why='Mest jafnvægið milli tíma, fjölbreytni og fjölda mynda — og pláss til að verða almennilega þægileg/ur.';
+      }
+      if(t==='120' || purpose==='idea'){
+        name='Main Character sjút';
+        base=89000;
+        why='Þegar þú ert með concept eða vilt fleiri look og meira rými til að gera eitthvað virkilega júník.';
+      }
+
+      const extrasTotal = (bts ? 20000 : 0) + extra;
+      const subtotal = base + extrasTotal;
+      const premiumAdd = premium ? subtotal * .20 : 0;
+      const total = subtotal + premiumAdd;
+
+      document.getElementById('calcPackage').textContent = name;
+      document.getElementById('calcTotal').textContent = kr(total);
+      document.getElementById('baseLine').textContent = kr(base);
+      document.getElementById('timeLine').textContent = premium ? '+'+kr(premiumAdd) : '0 kr.';
+      document.getElementById('extrasLine').textContent = extrasTotal ? '+'+kr(extrasTotal) : '0 kr.';
+      document.getElementById('calcWhy').textContent = why;
+    }
+
+    document.querySelectorAll('#verd input,#verd select').forEach(el=>el.addEventListener('change',calc));
+
+    document.getElementById('copyQuote').addEventListener('click', async ()=>{
+      const name = document.getElementById('calcPackage').textContent;
+      const total = document.getElementById('calcTotal').textContent;
+      const text = `Snjókallinn — ${name} · áætlað verð ${total}`;
+      try{
+        await navigator.clipboard.writeText(text);
+        document.getElementById('copyStatus').textContent = '✓ Tillagan var afrituð';
+      }catch(e){
+        document.getElementById('copyStatus').textContent = text;
+      }
+    });
+
+    renderQuiz();
+    calc();
   </script>
 </body>
 </html>
